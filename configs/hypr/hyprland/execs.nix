@@ -18,6 +18,6 @@ with pkgs; {
     # "sleep 1 && ${gammastep}/bin/gammastep"
     "${bluez}/bin/mpris-proxy"
     "${config.programs.caelestia.cli.package}/bin/caelestia resizer -d"
-    # "caelestia shell -d"
+    "caelestia shell -d"
   ];
 }

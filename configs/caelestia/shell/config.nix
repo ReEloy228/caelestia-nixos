@@ -74,15 +74,15 @@ in
         workspaces = true;
       };
 
-      status = {
-        showAudio      = false;
-        showBattery    = true;
-        showBluetooth  = true;
-        showKbLayout   = false;
-        showLockStatus = true;
-        showMicrophone = false;
-        showNetwork    = true;
-      };
+      statusIcons = [
+        { id = "lockStatus"; enabled = true; }
+        { id = "audio"; enabled = false; }
+        { id = "microphone"; enabled = false; }
+        { id = "kbLayout"; enabled = false; }
+        { id = "network"; enabled = true; }
+        { id = "bluetooth"; enabled = true; }
+        { id = "battery"; enabled = true; }
+      ];
 
       tray = {
         background = false;
@@ -237,7 +237,7 @@ in
       # Динамическая привязка к hypr.variables
       audioIncrement     = (use "hypr.variables" "volumeStep" 10.0) / 100.0;
       defaultPlayer      = "Spotify";
-      gpuType            = "";
+      gpuType            = "Auto";
       maxVolume          = 1;
       smartScheme        = true;
       useFahrenheit      = false;
