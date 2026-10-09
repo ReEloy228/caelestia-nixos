@@ -51,7 +51,7 @@ Add `caelestianix` and `home-manager` as inputs to your flake, then include the 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
-    caelestianix.url = "github:Xellor-Dev/caelestia-nixos";
+    caelestianix.url = "github:ReEloy228/caelestia-nixos";
   };
 
   outputs = { self, nixpkgs, home-manager, caelestianix, ... }@inputs:
@@ -174,4 +174,3 @@ You can configure like you configure any other module option, but you have extra
 
 - [caelestia-dots](https://github.com/caelestia-dots/caelestia), awesome dotfiles and shell
 - [infuse.nix](https://codeberg.org/amjoseph/infuse.nix), greatly enhances customization
-
