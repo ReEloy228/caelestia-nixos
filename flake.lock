@@ -2,13 +2,8 @@
   "nodes": {
     "caelestia-cli": {
       "inputs": {
-        "caelestia-shell": [
-          "caelestia-shell"
-        ],
-        "nixpkgs": [
-          "caelestia-shell",
-          "nixpkgs"
-        ]
+        "caelestia-shell": ["caelestia-shell"],
+        "nixpkgs": ["caelestia-shell", "nixpkgs"]
       },
       "locked": {
         "lastModified": 1790921043,
@@ -28,9 +23,7 @@
       "inputs": {
         "caelestia-cli": "caelestia-cli",
         "m3shapes": "m3shapes",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
+        "nixpkgs": ["nixpkgs"],
         "quickshell": "quickshell"
       },
       "locked": {
@@ -49,10 +42,7 @@
     },
     "m3shapes": {
       "inputs": {
-        "nixpkgs": [
-          "caelestia-shell",
-          "nixpkgs"
-        ]
+        "nixpkgs": ["caelestia-shell", "nixpkgs"]
       },
       "locked": {
         "lastModified": 1787906858,
@@ -87,10 +77,7 @@
     },
     "quickshell": {
       "inputs": {
-        "nixpkgs": [
-          "caelestia-shell",
-          "nixpkgs"
-        ]
+        "nixpkgs": ["caelestia-shell", "nixpkgs"]
       },
       "locked": {
         "lastModified": 1791027806,
