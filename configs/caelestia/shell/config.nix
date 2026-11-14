@@ -24,15 +24,15 @@ in
     # ── Appearance ──────────────────────────────────────────────────────
     appearance = {
       anim.durations.scale = 1;
-      font = {
-        family = {
-          clock = "Rubik";
-          material = "Material Symbols Rounded";
-          mono = "CaskaydiaCove NF";
-          sans = "Rubik";
-        };
-        size.scale = 1;
-      };
+      #font = {
+      #  family = {
+      #    clock = "Rubik";
+      #    material = "Material Symbols Rounded";
+      #    mono = "CaskaydiaCove NF";
+      #    sans = "Rubik";
+      #  };
+      #  size.scale = 1;
+      #};
       padding.scale = 1;
       rounding.scale = 1;
       spacing.scale = 1;
@@ -128,7 +128,7 @@ in
         label = "  ";
         occupiedBg = false;
         occupiedLabel = "󰮯";
-        perMonitorWorkspaces = true;
+        #perMonitorWorkspaces = true;
         showWindows = true;
         shown = 5;
         specialWorkspaceIcons = [
@@ -196,15 +196,27 @@ in
           {
             timeout = 180;
             idleAction = "lock";
+            enabled = true;
+            inhibitWhenAudio = false;
+            inhibitWhenCharging = false;
+            respectInhibitors = true;
           }
           {
             timeout = 300;
             idleAction = "dpms off";
             returnAction = "dpms on";
+            enabled = true;
+            inhibitWhenAudio = false;
+            inhibitWhenCharging = false;
+            respectInhibitors = true;
           }
           {
             timeout = 600;
             idleAction = sessionCommands.sleep;
+            enabled = true;
+            inhibitWhenAudio = false;
+            inhibitWhenCharging = false;
+            respectInhibitors = true;
           }
         ];
       };
@@ -377,8 +389,10 @@ in
       gpuType = "Auto";
       maxVolume = 1;
       smartScheme = true;
-      useFahrenheit = false;
-      useTwelveHourClock = false;
+      clockFormat = "TwentyFourHour";
+      dataUnits = "Binary";
+      sensorUnits = "Celsius";
+      weatherUnits = "Celsius";
       visualiserBars = 45;
       weatherLocation = "";
       playerAliases = [
@@ -436,6 +450,9 @@ in
             name = "wireguard";
             interface = "your-connection-name";
             displayName = "Wireguard (Your VPN)";
+            id = "";
+            connectCmd = [ ];
+            disconnectCmd = [ ];
           }
         ];
       };

@@ -9,12 +9,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs: let
-    opts = import ./configs/caelestia/shell/options.nix { lib = inputs.nixpkgs.lib; };
-  in {
-    homeManagerModules.default = import ./caelestia.nix inputs;
-    lib = {
-      inherit (opts) mkEntry mkAction sessionCommands;
+  outputs =
+    inputs:
+    let
+      opts = import ./configs/caelestia/shell/options.nix { lib = inputs.nixpkgs.lib; };
+    in
+    {
+      homeManagerModules.default = import ./caelestia.nix inputs;
+      lib = {
+        inherit (opts) mkEntry mkAction sessionCommands;
+      };
     };
-  };
 }
