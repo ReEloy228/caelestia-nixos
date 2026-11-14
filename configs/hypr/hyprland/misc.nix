@@ -1,12 +1,10 @@
-{...}: {
+{ ... }: {
   misc = {
-    vfr = true;
     vrr = 1;
     animate_manual_resizes = false;
     animate_mouse_windowdragging = false;
     disable_hyprland_logo = true;
     force_default_wallpaper = 0;
-    # new_window_takes_over_fullscreen — removed in Hyprland 0.53+
     allow_session_lock_restore = true;
     middle_click_paste = false;
     focus_on_activate = true;
@@ -18,5 +16,6 @@
 
   debug = {
     error_position = 1;
+    vfr = true;
   };
 }

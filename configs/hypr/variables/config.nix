@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   # Apps
   terminal = "foot";
   browser = "firefox";
@@ -88,4 +88,5 @@
   kbShowPanels = "Super, K";
   kbLock = "Super, L";
   kbRestoreLock = "Super+Alt, L";
+  kbOptions = "grp:caps_toggle";
 }

@@ -5,21 +5,23 @@
   dots,
   use,
   ...
-}: let
+}:
+let
   caelestia = "${dots.caelestia.cli.package}/bin/caelestia";
   app2unit = "${pkgs.app2unit}/bin/app2unit";
   hyprpicker = "${pkgs.hyprpicker}/bin/hyprpicker";
   ydotool = "${pkgs.ydotool}/bin/ydotool";
-in {
+in
+{
   # Submaps must be placed first
   _1submap = {
-    exec = ["hyprctl dispatch submap global"];
+    exec = [ "hyprctl dispatch submap global" ];
     submap = "global";
   };
 
   # Launcher binds second
   _2launcher = {
-    bindi = ["Super, Super_L, global, caelestia:launcher"];
+    bindi = [ "Super, Super_L, global, caelestia:launcher" ];
 
     bindin = [
       "Super, catchall, global, caelestia:launcherInterrupt"
@@ -171,8 +173,8 @@ in {
     "$kbWindowGroupCyclePrev, cyclenext, prev"
     "Ctrl+Alt, Tab, changegroupactive, f"
     "Ctrl+Shift+Alt, Tab, changegroupactive, b"
-    "Super, Minus, splitratio, -0.1"
-    "Super, Equal, splitratio, 0.1"
+    "Super, Minus, layoutmsg, mfact -0.1"
+    "Super, Equal, layoutmsg, mfact +0.1"
   ];
 
   bindm = [
@@ -183,7 +185,9 @@ in {
   ];
 
   bindle = [
-    ", XF86AudioRaiseVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; wpctl set-volume -l ${lib.strings.floatToString (use "caelestia.shell" "settings.services.maxVolume" 1)} @DEFAULT_AUDIO_SINK@ $volumeStep%+"
+    ", XF86AudioRaiseVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; wpctl set-volume -l ${
+      lib.strings.floatToString (use "caelestia.shell" "settings.services.maxVolume" 1)
+    } @DEFAULT_AUDIO_SINK@ $volumeStep%+"
     ", XF86AudioLowerVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; wpctl set-volume @DEFAULT_AUDIO_SINK@ $volumeStep%-"
   ];
 }
