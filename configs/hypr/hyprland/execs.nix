@@ -3,7 +3,8 @@
   config,
   ...
 }:
-with pkgs; {
+with pkgs;
+{
   # commented execs were supplied by home-manager modules
   exec-once = [
     # "gnome-keyring-daemon --start --components=secrets"
@@ -18,6 +19,6 @@ with pkgs; {
     # "sleep 1 && ${gammastep}/bin/gammastep"
     "${bluez}/bin/mpris-proxy"
     "${config.programs.caelestia.cli.package}/bin/caelestia resizer -d"
-    "caelestia shell -d"
+    #"caelestia shell -d"
   ];
 }
