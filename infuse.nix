@@ -50,8 +50,6 @@ let
         name: value:
         if (lib.isFunction value) || (isSugar name && !lib.isAttrs value) || name == "__assign" then
           value
-        else if lib.isAttrs value && !isValidAttrs value then
-          value
         else if isValidAttrs value then
           lib.mapAttrs (n: v: transformToInfusion n v) value
         else if lib.isList value then
